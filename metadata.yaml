@@ -1,0 +1,6 @@
+homepage: "https://source.app"
+documentation: "https://help.source.app"
+versions:
+  - sha: <full commit SHA from the public repo>
+    changeNotes: |
+      Initial release. Consent-aware pixel loading via Google Consent Mode.

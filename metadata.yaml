@@ -3,4 +3,4 @@ documentation: "https://help.source.app"
 versions:
   - sha: 2c9ed92237fbd7f093187c8f995b86a4116bca5f
     changeNotes: |
-      Initial release. Consent-aware pixel loading via Google Consent Mode.
+      V1 release. Consent-aware pixel loading via Google Consent Mode.

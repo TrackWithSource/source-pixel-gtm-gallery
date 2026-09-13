@@ -14,6 +14,7 @@ ___INFO___
   "version": 1,
   "securityGroups": [],
   "displayName": "Source",
+  "categories": ["ANALYTICS", "ATTRIBUTION", "CONVERSIONS", "DATA_WAREHOUSING", "MARKETING"],
   "brand": {
     "id": "brand_dummy",
     "displayName": "",

@@ -8,6 +8,28 @@ Source provides a Google Tag Manager (GTM) gallery tag for easy install for GTM 
 
 Install Source tag from Google Tag Manager Gallery
 
+## Adding Permissions
+
+When you install the tag from the gallery (or import [template.tpl](template.tpl)), all required permissions are already declared — GTM will simply ask you to review and accept them.
+
+If you are building the template manually by pasting [raw-code.js](raw-code.js) into a new Custom Template:
+
+1. In GTM, go to **Templates → Tag Templates → New**.
+2. Paste the contents of `raw-code.js` into the **Code** tab. GTM detects the sandboxed APIs used and lists the required permissions.
+3. Open the **Permissions** tab and configure each entry:
+
+| Permission | Configuration |
+| --- | --- |
+| Injects scripts | Allowed URL match pattern: `https://pixel.source.app/*` |
+| Accesses global variables | `sourcePixel`: read, write, execute. `sourcePixelGtmLoaded`: read, write, execute |
+| Accesses consent state | `analytics_storage`: read and write |
+| Logs to console | Only while debugging / previewing |
+| Reads container data | No configuration needed |
+
+4. Save the template. It is now available under **Tags → New → Custom** in your container.
+
+The *Injects scripts* pattern must match the pixel URL configured at the top of the code — if you point `PIXEL_URL` somewhere else (e.g. a self-hosted copy), update the URL pattern to match or the tag will fail with an `injectScript` permission error.
+
 ## Cookie Consent Management Platform Instructions
 
 _IMPORTANT_ - You must read the instructions from your CMP prior to using the Source Gallery Tag.
@@ -33,5 +55,5 @@ sourcePixel('consent', true)
 
 // Execute this callback if the user declines consent
 // in your CMP
-sourcePixel('consent', true)
+sourcePixel('consent', false)
 ```
